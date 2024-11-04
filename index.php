@@ -1,5 +1,4 @@
 <?php
-
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
@@ -39,15 +38,16 @@
                 // Instanciation du contrôleur et appel de la méthode
                 $controller = new $controllerName();
                 $controller->$methodName();
+                
             } else {
                 // Gestion des erreurs (page 404, etc.)
-                echo '<h2>la page demandée n\'existe pas</h2>';
+                require_once 'views/404.php';
             }
         }
     }
 
     // Instanciation du routeur
-    $router = new Router('DemoMVCAlpha');
+    $router = new Router('MVC');
 
     // Ajout des routes
     $router->addRoute('', 'HomeController@index'); // Pour la racine
