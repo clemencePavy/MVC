@@ -1,5 +1,6 @@
 <?php
     class TaskController {
+
         public function index() {
             $taskModel = new Task();
             $tasks = $taskModel->getAllTasks();

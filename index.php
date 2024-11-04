@@ -38,6 +38,7 @@
                 // Instanciation du contrôleur et appel de la méthode
                 $controller = new $controllerName();
                 $controller->$methodName();
+
                 
             } else {
                 // Gestion des erreurs (page 404, etc.)
@@ -47,7 +48,7 @@
     }
 
     // Instanciation du routeur
-    $router = new Router('MVC');
+    $router = new Router('MVC'); //marche seulement en local (avec xampp)
 
     // Ajout des routes
     $router->addRoute('', 'HomeController@index'); // Pour la racine
